@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PlanMyTripApp.Models.SearchFlightsModel>
+
+@{
+    ViewBag.Title = "SearchFlightsResult";
+}
+
+<h2>SearchFlightsResult</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfSeatsAvailable)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.FlightType)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => item.FlightName)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => item.DepartureTime)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => item.ArrivalTime)
+      </td>
+      <td>
+        @Html.DisplayFor(modelItem => item.NoOfSeatsAvailable)
+      </td>
+      @*<td>
+        @Html.DisplayFor(modelItem => item.FlightType)
+    </td>*@
+      
+
+      @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.FlightNumber }) |
+        @Html.ActionLink("Details", "Details", new { id = item.FlightNumber }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.FlightNumber })
+    </td>*@
+      
+      
+    </tr>
+}
+
+</table>

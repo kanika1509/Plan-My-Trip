@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PlanMyTripApp.Models.Flight>
+
+@{
+    ViewBag.Title = "Filght Details";
+}
+
+<h2>ViewFlights</h2>
+@{ if (Session["userid"] != null)
+    {
+    <p>
+      @Html.ActionLink("Add Flight", "AddFlights")
+    </p>
+      }
+    }
+    <table class="table">
+      <tr>
+        <th>
+          @Html.DisplayNameFor(model => model.FlightName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.SeatsCapacity)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.NoOfSeatsAvailable)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.FlightType)
+        </th>
+        <th></th>
+      </tr>
+
+      @foreach (var item in Model)
+      {
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.FlightName)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.SeatsCapacity)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.NoOfSeatsAvailable)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.FlightType)
+          </td>
+          @{ if (Session["userid"] != null)
+            {
+              <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FlightNumber.Trim(), FlightName = item.FlightName, FlightType = item.FlightType, SeatsCapacity = item.SeatsCapacity, NoOfSeatsAvailable = item.NoOfSeatsAvailable }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FlightNumber.Trim() }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FlightNumber.Trim(), FlightName = item.FlightName, FlightType = item.FlightType, SeatsCapacity = item.SeatsCapacity, NoOfSeatsAvailable = item.NoOfSeatsAvailable })
+
+
+              </td>
+            }
+          }
+        </tr>
+      }
+    </table>
+
+

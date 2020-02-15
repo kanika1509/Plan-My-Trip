@@ -1,0 +1,50 @@
+﻿@model PlanMyTripApp.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatsCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatsCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfSeatsAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfSeatsAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlightType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlightType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "EditHotel", new { id = Model.FlightNumber }) |*@
+    @Html.ActionLink("View all Flight", "ViewFlights")
+</p>

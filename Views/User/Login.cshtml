@@ -1,0 +1,50 @@
+﻿
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<form method="post">
+  <table border="1" align="center">
+    <tr>
+      <th colspan="2" style="text-align:center">Login Form</th>
+      </tr>
+    <tr>
+    <td>Enter Email Address :</td>
+    <td>
+      @Html.TextBox("txtEmail")
+      </td>
+      </tr>
+    <tr>
+    <td>Enter Password</td>
+    <td>
+      @Html.Password("txtPass")
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="submit" value="Login">
+        </td>
+      </tr>
+    </table>
+  </form>
+<div style="color:red">
+  @{ 
+      if (ViewBag.errmsg != null)
+      {
+          <span>@ViewBag.errmsg</span>
+        }
+
+      }
+  </div>
+<div style="color:green">
+  @{ 
+      if(ViewBag.msg!=null)
+      {
+          <span>@ViewBag.msg</span>
+      }
+  }
+  </div>
+
+

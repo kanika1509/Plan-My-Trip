@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PlanMyTripApp.Models.HotelModel>
+
+@{
+    ViewBag.Title = "SearchHotelsResult";
+}
+
+<h2>SearchHotelsResult</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.HotelName)
+      </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PerDayRate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+      <td>
+        @Html.DisplayFor(modelItem => item.HotelName)
+      </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerDayRate)
+        </td>
+      @*@{ 
+          if (Session["userid"] != null)
+          {
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.HotelName }) |
+            @Html.ActionLink("Details", "Details", new { id = item.HotelName }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.HotelName })
+        </td>
+            }
+          }*@
+    </tr>
+}
+
+</table>
