@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace PlanMyTripApp.Controllers
+namespace PlanMyTripWebAPI.Controllers
 {
     public class ValuesController : ApiController
     {
